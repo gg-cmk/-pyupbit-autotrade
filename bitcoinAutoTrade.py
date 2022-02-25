@@ -2,8 +2,8 @@ import time
 import pyupbit
 import datetime
 
-access = "x4HNZGfaD8Jk8h7KSs1OH6YsvHTftFSkNhl4wxxf"
-secret = "GGNs4Wej3vV5atg4aShfF66Et2bHG5jywDgUlIOn"
+access = "access"
+secret = "secret"
 
 def get_target_price(ticker, k):
     """변동성 돌파 전략으로 매수 목표가 조회"""
@@ -57,7 +57,7 @@ while True:
             btc_target_price = get_target_price("KRW-BTC", 0.5)
             btc_current_price = get_current_price("KRW-BTC")
             btc_buy_price = get_avg_price("BTC")
-            
+
             # 현재 보유 코인 수익률 계산 
             buy_profit = ((btc_current_price - btc_buy_price) / btc_buy_price) * 100
             profit = round(buy_profit, 2)

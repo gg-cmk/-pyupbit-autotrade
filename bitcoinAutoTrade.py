@@ -29,6 +29,7 @@ def get_balance(ticker):
     return 0
 
 def get_avg_price(ticker):
+    """평단가 조회"""
     balances = upbit.get_balances()
     for b in balances:
         if b['currency'] == ticker:

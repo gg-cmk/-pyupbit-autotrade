@@ -56,13 +56,14 @@ while True:
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             btc_target_price = get_target_price("KRW-BTC", 0.4)
+            target_limit = btc_target_price + (btc_target_price * 0.01)
             btc_current_price = get_current_price("KRW-BTC")
             btc_buy_price = get_avg_price("BTC")
 
             # 현재 보유 코인 수익률 계산 
             buy_profit = ((btc_current_price - btc_buy_price) / btc_buy_price) * 100
             profit = round(buy_profit, 2)
-            if btc_target_price == btc_current_price:
+            if btc_target_price <= btc_current_price < target_limit:
                 krw = get_balance("KRW")
                 if krw > 5000:
                     upbit.buy_market_order("KRW-BTC", krw*0.9995)

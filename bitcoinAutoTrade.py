@@ -56,7 +56,7 @@ while True:
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             btc_target_price = get_target_price("KRW-BTC", 0.4)
-            target_limit = btc_target_price + (btc_target_price * 0.01)
+            target_limit = btc_target_price + (btc_target_price * 0.001)
             btc_current_price = get_current_price("KRW-BTC")
             btc_buy_price = get_avg_price("BTC")
 

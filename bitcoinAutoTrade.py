@@ -67,13 +67,13 @@ while True:
                 krw = get_balance("KRW")
                 if krw > 5000:
                     upbit.buy_market_order("KRW-BTC", krw*0.9995)
-            # 평균 매수가 보다 5% 상승 시 매도
-            elif profit >= 5.0:
+            # 평균 매수가 보다 3% 상승 시 매도
+            elif profit >= 3.0:
                 btc = get_balance("BTC")
                 if btc > 0.00008:
                     upbit.sell_market_order("KRW-BTC", btc)
-            # 평균 매수가 보다 5% 하락 시 매도
-            elif profit <= -5.0:
+            # 평균 매수가 보다 3% 하락 시 매도
+            elif profit <= -3.0:
                 btc = get_balance("BTC")
                 if btc > 0.00008:
                     upbit.sell_market_order("KRW-BTC", btc)

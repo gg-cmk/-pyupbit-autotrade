@@ -85,6 +85,7 @@ while True:
             if btc > 0.00008:
                 upbit.sell_market_order("KRW-BTC", btc)
         time.sleep(1)
+        
     except Exception as e:
         print(e)
         time.sleep(1)
